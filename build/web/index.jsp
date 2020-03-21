@@ -12,111 +12,60 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ordenar comida</title>
         <link href="./css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet" />
         <link href="./css/styles.css" rel="stylesheet" />
     </head>
 
     <body>
         <div class="container mt-5">
-            <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:10px;">
-                <div class="col-xs-12 col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading top-bar">
-                            <div class="col-md-8 col-xs-8">
-                                <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
-                            </div>
-                            <div class="col-md-4 col-xs-4" style="text-align: right;">
-                                <a href="#"><span id="minim_chat_window"
-                                                  class="glyphicon glyphicon-minus icon_minim"></span></a>
-                                <a href="#"><span class="glyphicon glyphicon-remove icon_close"
-                                                  data-id="chat_window_1"></span></a>
-                            </div>
-                        </div>
-                        <div class="panel-body msg_container_base">
-                            <div class="row msg_container base_sent">
-                                <div class="col-md-10 col-xs-10">
-                                    <div class="messages msg_sent">
-                                        <p>that mongodb thing looks good, huh?
-                                            tiny master db, and huge document store</p>
-                                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-                                         class=" img-responsive ">
+            <h3 class=" text-center">Messaging</h3>
+            <div class="messaging">
+                <div class="inbox_msg">
+                    <div class="mesgs">
+                        <div class="msg_history">
+                            <div class="incoming_msg">
+                                <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                <div class="received_msg">
+                                    <div class="received_withd_msg">
+                                        <p>Test which is a new approach to have all
+                                            solutions</p>
+                                        <span class="time_date"> 11:01 AM    |    June 9</span></div>
                                 </div>
                             </div>
-                            <div class="row msg_container base_receive">
-                                <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-                                         class=" img-responsive ">
-                                </div>
-                                <div class="col-md-10 col-xs-10">
-                                    <div class="messages msg_receive">
-                                        <p>that mongodb thing looks good, huh?
-                                            tiny master db, and huge document store</p>
-                                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                    </div>
+                            <div class="outgoing_msg">
+                                <div class="sent_msg">
+                                    <p>Test which is a new approach to have all
+                                        solutions</p>
+                                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                            </div>
+                            <div class="incoming_msg">
+                                <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                <div class="received_msg">
+                                    <div class="received_withd_msg">
+                                        <p>Test, which is a new approach to have</p>
+                                        <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
                                 </div>
                             </div>
-                            <div class="row msg_container base_receive">
-                                <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-                                         class=" img-responsive ">
-                                </div>
-                                <div class="col-xs-10 col-md-10">
-                                    <div class="messages msg_receive">
-                                        <p>that mongodb thing looks good, huh?
-                                            tiny master db, and huge document store</p>
-                                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                    </div>
-                                </div>
+                            <div class="outgoing_msg">
+                                <div class="sent_msg">
+                                    <p>Apollo University, Delhi, India Test</p>
+                                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
                             </div>
-                            <div class="row msg_container base_sent">
-                                <div class="col-xs-10 col-md-10">
-                                    <div class="messages msg_sent">
-                                        <p>that mongodb thing looks good, huh?
-                                            tiny master db, and huge document store</p>
-                                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-                                         class=" img-responsive ">
-                                </div>
-                            </div>
-                            <div class="row msg_container base_receive">
-                                <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-                                         class=" img-responsive ">
-                                </div>
-                                <div class="col-xs-10 col-md-10">
-                                    <div class="messages msg_receive">
-                                        <p>that mongodb thing looks good, huh?
-                                            tiny master db, and huge document store</p>
-                                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row msg_container base_sent">
-                                <div class="col-md-10 col-xs-10 ">
-                                    <div class="messages msg_sent">
-                                        <p>that mongodb thing looks good, huh?
-                                            tiny master db, and huge document store</p>
-                                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-2 avatar">
-                                    <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-                                         class=" img-responsive ">
+                            <div class="incoming_msg">
+                                <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                <div class="received_msg">
+                                    <div class="received_withd_msg">
+                                        <p>We work directly with our designers and suppliers,
+                                            and sell direct to you, which means quality, exclusive
+                                            products, at a price anyone can afford.</p>
+                                        <span class="time_date"> 11:01 AM    |    Today</span></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">
-                            <div class="input-group mt-1 mb-1">
-                                <input type="text" class="form-control" placeholder="Escribe algo...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit">Enviar</button>
-                                </div>
+                        <div class="type_msg">
+                            <div class="input_msg_write">
+                                <input type="text" class="write_msg" placeholder="Type a message" />
+                                <button class="msg_send_btn" type="button"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
