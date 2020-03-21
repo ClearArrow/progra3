@@ -49,9 +49,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>JSP Page</title>\n");
+      out.write("        <link href=\"./css/bootstrap.min.css\" rel=\"stylesheet\" />\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <h1>Hello World!</h1>\n");
+      out.write("        <script src=\"./js/jquery-3.4.1.min.js\"></script>\n");
+      out.write("        <script src=\"./js/popper.min.js\"></script>\n");
+      out.write("        <script src=\"./js/bootstrap.min.js\"></script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

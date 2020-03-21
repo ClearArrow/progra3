@@ -9,9 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Ordenar comida</title>
+        <link href="./css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="container mt-5">
+            <h1>Ordenar comida rápida</h1>
+        </div>
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
     </body>
 </html>
