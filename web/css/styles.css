@@ -8,7 +8,7 @@ img {
   width: 40%;
   border-right: 1px solid #c4c4c4;
 }
-.inbox_msg {
+.mensajeria {
   border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
@@ -97,17 +97,17 @@ img {
   background: #ebebeb;
 }
 
-.incoming_msg_img {
+.img_bot {
   display: inline-block;
   width: 6%;
 }
-.received_msg {
+.recibido {
   display: inline-block;
   padding: 0 0 0 10px;
   vertical-align: top;
   width: 92%;
 }
-.received_withd_msg p {
+.bot p {
   background: #ebebeb none repeat scroll 0 0;
   border-radius: 3px;
   color: #646464;
@@ -116,22 +116,22 @@ img {
   padding: 5px 10px 5px 12px;
   width: 100%;
 }
-.time_date {
+.fecha {
   color: #747474;
   display: block;
   font-size: 12px;
   margin: 8px 0 0;
 }
-.received_withd_msg {
+.bot {
   width: 57%;
 }
-.mesgs {
+.mensajes {
   float: left;
   padding: 30px 15px 0 25px;
   width: 100%;
 }
 
-.sent_msg p {
+.men_enviado p {
   background: #05728f none repeat scroll 0 0;
   border-radius: 3px;
   font-size: 14px;
@@ -140,15 +140,15 @@ img {
   padding: 5px 10px 5px 12px;
   width: 100%;
 }
-.outgoing_msg {
+.enviado {
   overflow: hidden;
-  margin: 26px 0 26px;
+  margin: 26px 5px 26px 0;
 }
-.sent_msg {
+.men_enviado {
   float: right;
   width: 46%;
 }
-.input_msg_write input {
+.escribir input {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
   color: #4c4c4c;
@@ -157,11 +157,11 @@ img {
   width: 100%;
 }
 
-.type_msg {
+.texto {
   border-top: 1px solid #c4c4c4;
   position: relative;
 }
-.msg_send_btn {
+.boton_enviar {
   background: #05728f none repeat scroll 0 0;
   border: medium none;
   border-radius: 50%;
@@ -174,10 +174,10 @@ img {
   top: 11px;
   width: 33px;
 }
-.messaging {
+.chat {
   padding: 0 0 50px 0;
 }
-.msg_history {
+.historial {
   height: 516px;
   overflow-y: auto;
 }
