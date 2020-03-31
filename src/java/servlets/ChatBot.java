@@ -1,21 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlets;
 
+import clases.Chat;
+import clases.Mensaje;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
+import javax.servlet.ServletContext;
+import javax.servlet.http.Cookie;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
-/**
- *
- * @author José
- */
 public class ChatBot extends HttpServlet {
 
     /**
@@ -27,11 +38,118 @@ public class ChatBot extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    private String archXML = "D:\\Chat.xml";
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        String error = "";
+        String borrar = request.getParameter("borrar");
+        String texto = request.getParameter("texto");
+        String fecha = request.getParameter("fecha");
+        String autor = request.getParameter("autor");
+        // error += texto + fecha + autor;
+        Chat chat = new Chat();
+        chat.cantidad = 0;
+        try {
+            // String archXML = "http://localhost:8080/ProyectoProgra3/Chat.xml";
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse(archXML);
+            // Node mensajes = doc.getFirstChild();
+            if (borrar != null && borrar.equals("si")) {
+                Node chatTag = doc.getFirstChild();
+                while (chatTag.hasChildNodes()) {
+                    chatTag.removeChild(chatTag.getFirstChild());
+                }
+                TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                Transformer transformer = transformerFactory.newTransformer();
+                DOMSource source = new DOMSource(doc);
+                StreamResult result = new StreamResult(new File(archXML));
+                transformer.transform(source, result);
+                agregarMensaje("Bienvenido, ¿qué deseas ordenar?", new Date().getTime() + "", "0");
+            }
+            if (texto != null && fecha != null && autor != null) {
+                agregarMensaje(texto, fecha, autor);
+            }
+            NodeList mensajes = doc.getElementsByTagName("mensaje");
+            for (int i = 0; i < mensajes.getLength(); i++) {
+                Node mensaje = mensajes.item(i);
+                if (mensaje.getNodeType() == Node.ELEMENT_NODE) {
+                    Element e = (Element) mensaje;
+                    NodeList campos = e.getChildNodes();
+                    Mensaje men = new Mensaje();
+                    for (int j = 0; j < campos.getLength(); j++) {
+                        Node hijo = campos.item(j);
+                        if (hijo.getNodeType() == Node.ELEMENT_NODE) {
+                            if (hijo.getNodeName() == "texto") {
+                                men.mensaje = hijo.getTextContent();
+                            } else if (hijo.getNodeName() == "fecha") {
+                                men.fecha = new Date(Long.parseLong(hijo.getTextContent()));
+                            } else if (hijo.getNodeName() == "autor") {
+                                men.autor = Integer.parseInt(hijo.getTextContent());
+                            }
+                        }
+                    }
+                    chat.mensajes.add(men);
+                    chat.cantidad++;
+                }
+            }
+        } catch (ParserConfigurationException pce) {
+            error += "Error 1" + pce;
+            pce.printStackTrace();
+        } catch (TransformerException tfe) {
+            tfe.printStackTrace();
+        } catch (IOException ioe) {
+            error += "Error 2" + ioe;
+            ioe.printStackTrace();
+        } catch (SAXException sae) {
+            error += "Error 3" + sae;
+            sae.printStackTrace();
+        }
+        request.getSession().setAttribute("error", error);
+        // chat.mensajes.add(new Mensaje("Bienvenido, ¿qué deseas ordenar?", new Date(), 0));
+        // chat.setCantidad(1);
+        request.getSession().setAttribute("chat", chat);
         request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+
+    private void agregarMensaje(String texto, String fecha, String autor) {
+        try {
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse(archXML);
+            Node chat = doc.getFirstChild();
+            Element mensaje = doc.createElement("mensaje");
+
+            Element textoE = doc.createElement("texto");
+            textoE.appendChild(doc.createTextNode(texto));
+
+            Element fechaE = doc.createElement("fecha");
+            fechaE.appendChild(doc.createTextNode(fecha));
+
+            Element autorE = doc.createElement("autor");
+            autorE.appendChild(doc.createTextNode(autor));
+
+            mensaje.appendChild(textoE);
+            mensaje.appendChild(fechaE);
+            mensaje.appendChild(autorE);
+            chat.appendChild(mensaje);
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(archXML));
+            transformer.transform(source, result);
+        } catch (ParserConfigurationException pce) {
+            pce.printStackTrace();
+        } catch (TransformerException tfe) {
+            tfe.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } catch (SAXException sae) {
+            sae.printStackTrace();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

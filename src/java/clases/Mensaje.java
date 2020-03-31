@@ -5,7 +5,7 @@ import java.util.Date;
 public class Mensaje {
     public String mensaje;
     public java.util.Date fecha;
-    public int autor;
+    public int autor; // Chatbot = 0; usuario = 1;
 
     public Mensaje() {
     }
@@ -14,5 +14,18 @@ public class Mensaje {
         this.mensaje = mensaje;
         this.fecha = fecha;
         this.autor = autor;
-    }    
+    }   
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setAutor(int autor) {
+        this.autor = autor;
+    }
+    
 }
