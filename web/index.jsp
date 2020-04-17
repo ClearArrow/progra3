@@ -27,12 +27,12 @@
             <div id="chat" class="chat">
                 <div class="mensajeria">
                     <div class="mensajes">
-                        <div class="historial">
+                        <div class="historial" id="historial">
                             <!--<div class="bot">
                                 <div class="img_bot"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                                 <div class="recibido">
                                     <div class="men_recibido">
-                                        <p>asd <% out.print(error); %></p>
+                                        <p>asd < out.print(error); %></p>
                                         <span class="fecha"> 11:01 AM    |    June 9</span></div>
                                 </div>
                             </div>

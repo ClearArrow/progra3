@@ -17,6 +17,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
+import java.text.Normalizer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
@@ -38,9 +39,8 @@ public class ChatBot extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     private String archXML = "D:\\Chat.xml";
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -72,6 +72,12 @@ public class ChatBot extends HttpServlet {
             }
             if (texto != null && fecha != null && autor != null) {
                 agregarMensaje(texto, fecha, autor);
+                String mensaje = quitarAcentos(texto);
+                String[] palabras = mensaje.split(" ");
+                System.out.println(palabras);
+                if (mensaje.indexOf("hamburguesa") != -1) {
+                    agregarMensaje("Gracias por tu preferencia", new Date().getTime() + "", "0");
+                }
             }
             NodeList mensajes = doc.getElementsByTagName("mensaje");
             for (int i = 0; i < mensajes.getLength(); i++) {
@@ -150,6 +156,17 @@ public class ChatBot extends HttpServlet {
         } catch (SAXException sae) {
             sae.printStackTrace();
         }
+    }
+
+    public static String quitarAcentos(String cadena) {
+        String limpio = null;
+        if (cadena != null) {
+            // Normalizar texto para eliminar acentos, dieresis, cedillas y tildes
+            limpio = Normalizer.normalize(cadena, Normalizer.Form.NFD);
+            // Quitar caracteres no ASCII excepto la ñ, interrogacion que abre, exclamacion que abre, grados, U con dieresis.
+            limpio = limpio.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        }
+        return limpio;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

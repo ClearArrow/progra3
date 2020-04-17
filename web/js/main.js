@@ -5,10 +5,16 @@ $(function () {
             // console.log(data);
             $('#chat').load('./ChatBot #chat', function () {
                 // console.log("listo");
+                $("#mensaje").focus();
+                $("#mensaje").off('keypress').on('keypress', function (e) {
+                    if (e.which == 13) {
+                        enviarMensaje();
+                    }
+                });
             });
         });
     });
-    $("#mensaje").keypress(function (e) {
+    $("#mensaje").off('keypress').on('keypress', function (e) {
         if (e.which == 13) {
             enviarMensaje();
         }
@@ -22,12 +28,12 @@ function enviarMensaje() {
             // console.log(data);
             $('#mensaje').val('');
             $('#chat').load('./ChatBot #chat', function () {
-                $("#mensaje").keypress(function (e) {
+                $("#mensaje").off('keypress').on('keypress', function (e) {
                     if (e.which == 13) {
                         enviarMensaje();
                     }
                 });
-                // console.log("listo");
+                $("#mensaje").focus();
             });
         });
     }
