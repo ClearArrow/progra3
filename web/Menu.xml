@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu>
+    <hamburguesa>
+        <nombre>de pollo</nombre>
+        <precio>15</precio>
+        <id>1</id>
+    </hamburguesa>
+    <hamburguesa>
+        <nombre>de res</nombre>
+        <precio>18</precio>
+        <id>2</id>
+    </hamburguesa>
+    <hamburguesa>
+        <nombre>doble de res</nombre>
+        <precio>21</precio>
+        <id>3</id>
+    </hamburguesa>
+    <hamburguesa>
+        <nombre>doble de pollo</nombre>
+        <precio>18.5</precio>
+        <id>4</id>
+    </hamburguesa>
+
+    <papa>
+        <nombre>porción grande</nombre>
+        <precio>9</precio>
+        <id>5</id>
+    </papa>
+    <papa>
+        <nombre>porción mediana</nombre>
+        <precio>7.5</precio>
+        <id>6</id>
+    </papa>
+    <papa>
+        <nombre>porción pequeña</nombre>
+        <precio>6</precio>
+        <id>7</id>
+    </papa>
+
+    <pizza>
+        <nombre>grande de queso</nombre>
+        <precio>35</precio>
+        <id>8</id>
+    </pizza>
+    <pizza>
+        <nombre>grande de pepperoni</nombre>
+        <precio>40</precio>
+        <id>9</id>
+    </pizza>
+    <pizza>
+        <nombre>grande de jamón</nombre>
+        <precio>40</precio>
+        <id>10</id>
+    </pizza>
+    <pizza>
+        <nombre>mediana de queso</nombre>
+        <precio>27</precio>
+        <id>11</id>
+    </pizza>
+    <pizza>
+        <nombre>mediana de pepperoni</nombre>
+        <precio>33</precio>
+        <id>12</id>
+    </pizza>
+    <pizza>
+        <nombre>mediana de jamón</nombre>
+        <precio>33</precio>
+        <id>13</id>
+    </pizza>
+    <pizza>
+        <nombre>personal de queso</nombre>
+        <precio>12</precio>
+        <id>14</id>
+    </pizza>
+    <pizza>
+        <nombre>personal de pepperoni</nombre>
+        <precio>15</precio>
+        <id>15</id>
+    </pizza>
+    <pizza>
+        <nombre>personal de jamón</nombre>
+        <precio>15</precio>
+        <id>16</id>
+    </pizza>
+
+    <pollo>
+        <nombre>porción de alitas</nombre>
+        <precio>12</precio>
+        <id>17</id>
+    </pollo>
+    <pollo>
+        <nombre>4 piezas</nombre>
+        <precio>15</precio>
+        <id>18</id>
+    </pollo>
+    <pollo>
+        <nombre>2 piezas</nombre>
+        <precio>10</precio>
+        <id>27</id>
+    </pollo>
+
+    <bebida>
+        <nombre>gaseosa de 2.5L</nombre>
+        <precio>11</precio>
+        <id>19</id>
+    </bebida>
+    <bebida>
+        <nombre>gaseosa mediana</nombre>
+        <precio>6</precio>
+        <id>20</id>
+    </bebida>
+    <bebida>
+        <nombre>gaseosa pequeña</nombre>
+        <precio>4</precio>
+        <id>21</id>
+    </bebida>
+    <bebida>
+        <nombre>té frio</nombre>
+        <precio>5</precio>
+        <id>22</id>
+    </bebida>
+    <bebida>
+        <nombre>agua pura</nombre>
+        <precio>3</precio>
+        <id>23</id>
+    </bebida>
+    <bebida>
+        <nombre>café</nombre>
+        <precio>5</precio>
+        <id>24</id>
+    </bebida>
+
+    <extra>
+        <nombre>dona</nombre>
+        <precio>4.5</precio>
+        <id>25</id>
+    </extra>
+    <extra>
+        <nombre>helado</nombre>
+        <precio>4</precio>
+        <id>26</id>
+    </extra>
+    <!--    
+    <combo>
+        <nombre>#1</nombre>
+        <precio>29</precio>
+        <contiene>2 5 20</contiene>
+    </combo>
+    <combo>
+        <nombre>#2</nombre>
+        <precio>27</precio>
+        <contiene>1 5 20</contiene>
+    </combo>
+    <combo>
+        <nombre>#3</nombre>
+        <precio>22</precio>
+        <contiene>27 5 20</contiene>
+    </combo>
+    <combo>
+        <nombre>#4</nombre>
+        <precio>20</precio>
+        <contiene>15 20</contiene>
+    </combo>
+    -->
+</menu>

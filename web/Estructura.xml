@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<estructura>
+    <id>1</id>
+    <texto>Bienvenido, ¿qué deseas ordenar?</texto>
+    <opcion id="1">
+        <id>1</id>
+        <texto>Claro, tenemos los siguientes tipos de </texto>
+        <desc>Cuando el usuario dice que quiere comprar una comida específica</desc>
+        <opcion id="1">
+            <id>1</id>
+            <texto>Está bien, será $1. ¿Te gustaría agregar alguna bebida? Tenemos las siguientes:</texto>
+            <desc>Cuando el usuario elige uno</desc>
+            <opcion id="1">
+                <id>1</id>
+                <texto>Ok, entonces serían $1 y $2. ¿Quisieras agregar algún extra? Tenemos donas a Q4.50 y helados a
+                    Q4.00</texto>
+                <desc>Cuando elige uno</desc>
+                <opcion id="1">
+                    <id>1</id>
+                    <texto>Está bien, en total serían $1, $2 y $3 por un total de $4. ¿Está bien?</texto>
+                    <desc>Cuando elige uno</desc>
+                    <opcion id="1">
+                        <id>1</id>
+                        <texto>¡Gracias por tu compra!</texto>
+                        <desc>Cuando dice que sí</desc>
+                    </opcion>
+                    <opcion id="2">
+                        <id>2</id>
+                        <texto>Ok, entonces solo serían $1 y $2 por un total de $4, ¿correcto?</texto>
+                        <desc>Cuando ya no quiere el extra</desc>
+                        <opcion id="1">
+                            <id>1</id>
+                            <texto>¡Gracias por tu compra!</texto>
+                            <desc>Cuando dice que sí</desc>
+                        </opcion>
+                    </opcion>
+                    <opcion id="3">
+                        <id>3</id>
+                        <texto>Ok, entonces solo serían $1 y $3 por un total de $4, ¿correcto?</texto>
+                        <desc>Cuando ya no quiere la bebida</desc>
+                        <opcion id="1">
+                            <id>1</id>
+                            <texto>¡Gracias por tu compra!</texto>
+                            <desc>Cuando dice que sí</desc>
+                        </opcion>
+                    </opcion>
+                    <opcion id="4">
+                        <id>4</id>
+                        <texto>Ok, entonces solo sería solo $1 por un total de $4, ¿correcto?</texto>
+                        <desc>Cuando ya no quiere la bebida ni el extra</desc>
+                        <opcion id="1">
+                            <id>1</id>
+                            <texto>¡Gracias por tu compra!</texto>
+                            <desc>Cuando dice que sí</desc>
+                        </opcion>
+                    </opcion>
+                    <opcion id="3">
+                        <id>5</id>
+                        <texto>¿Estás seguro?</texto>
+                        <desc>Cuando ya no quiere nada</desc>
+                        <opcion id="1">
+                            <id>1</id>
+                            <texto>Ok, buen día.</texto>
+                            <desc>Cuando dice que sí</desc>
+                        </opcion>
+                        <opcion id="2">
+                            <id>2</id>
+                            <accion>Volver a nivel anterior</accion>
+                            <desc>Cuando dice que no</desc>
+                        </opcion>
+                    </opcion>
+                </opcion>
+            </opcion>
+        </opcion>
+    </opcion>
+    <opcion id="2">
+        <id>2</id>
+        <texto>Disculpa, aquí no vendemos eso, ¿no preferirías algo de nuestro menú? Tenemos pizzas, porciones de pollo,
+            hamburguesas y porciones de papas fritas</texto>
+        <desc>Cuando pide algo que no está en el menú</desc>
+    </opcion>
+</estructura>

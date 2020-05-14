@@ -2,6 +2,7 @@ package servlets;
 
 import clases.Chat;
 import clases.Mensaje;
+import clases.Bot;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,8 +52,15 @@ public class ChatBot extends HttpServlet {
         String autor = request.getParameter("autor");
         // error += texto + fecha + autor;
         Chat chat = new Chat();
+        Bot bot = (Bot) request.getSession().getAttribute("bot");
         chat.cantidad = 0;
         try {
+            if (bot == null) {
+                System.out.println("Probando");
+                bot = new Bot();
+            } else {
+                System.out.println("Prueba 2");
+            }
             // String archXML = "http://localhost:8080/ProyectoProgra3/Chat.xml";
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -69,15 +77,12 @@ public class ChatBot extends HttpServlet {
                 StreamResult result = new StreamResult(new File(archXML));
                 transformer.transform(source, result);
                 agregarMensaje("Bienvenido, ¿qué deseas ordenar?", new Date().getTime() + "", "0");
+                bot = null;
             }
-            if (texto != null && fecha != null && autor != null) {
+            if (texto != null && fecha != null && autor != null) { // Se ejecuta si hay un nuevo mensaje
                 agregarMensaje(texto, fecha, autor);
                 String mensaje = quitarAcentos(texto);
-                String[] palabras = mensaje.split(" ");
-                System.out.println(palabras);
-                if (mensaje.indexOf("hamburguesa") != -1) {
-                    agregarMensaje("Gracias por tu preferencia", new Date().getTime() + "", "0");
-                }
+                agregarMensaje(bot.responder(mensaje), new Date().getTime() + "", "0");
             }
             NodeList mensajes = doc.getElementsByTagName("mensaje");
             for (int i = 0; i < mensajes.getLength(); i++) {
@@ -118,6 +123,7 @@ public class ChatBot extends HttpServlet {
         // chat.mensajes.add(new Mensaje("Bienvenido, ¿qué deseas ordenar?", new Date(), 0));
         // chat.setCantidad(1);
         request.getSession().setAttribute("chat", chat);
+        request.getSession().setAttribute("bot", bot);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
@@ -166,7 +172,7 @@ public class ChatBot extends HttpServlet {
             // Quitar caracteres no ASCII excepto la ñ, interrogacion que abre, exclamacion que abre, grados, U con dieresis.
             limpio = limpio.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
         }
-        return limpio;
+        return limpio.toLowerCase();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

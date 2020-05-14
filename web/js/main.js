@@ -34,6 +34,7 @@ function enviarMensaje() {
                     }
                 });
                 $("#mensaje").focus();
+                $('#historial').scrollTop(10000);
             });
         });
     }
