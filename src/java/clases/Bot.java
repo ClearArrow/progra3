@@ -44,7 +44,7 @@ public class Bot {
         String respuesta = "";
         if (totalRespondidas == 0) {
             // Opción 1 - el usuario especifica la comida que quiere, else lleva a opción 2
-            if (textoUsuario.indexOf("vende ") != -1 || textoUsuario.indexOf("tienen ") != -1 || textoUsuario.indexOf("me das ") != -1 || textoUsuario.indexOf("venden ") != -1 || textoUsuario.indexOf("deme ") != -1 || textoUsuario.indexOf("quiero ") != -1 || textoUsuario.indexOf("quisiera ") != -1 || textoUsuario.indexOf("me da ") != -1 || textoUsuario.indexOf("dame ") != -1 || textoUsuario.indexOf("tiene ") != -1 || textoUsuario.indexOf("me dan ") != -1) {
+            if (textoUsuario.indexOf("cuestan ") != -1 || textoUsuario.indexOf("cuesta ") != -1 || textoUsuario.indexOf("vende ") != -1 || textoUsuario.indexOf("tienen ") != -1 || textoUsuario.indexOf("me das ") != -1 || textoUsuario.indexOf("venden ") != -1 || textoUsuario.indexOf("deme ") != -1 || textoUsuario.indexOf("quiero ") != -1 || textoUsuario.indexOf("quisiera ") != -1 || textoUsuario.indexOf("me da ") != -1 || textoUsuario.indexOf("dame ") != -1 || textoUsuario.indexOf("tiene ") != -1 || textoUsuario.indexOf("me dan ") != -1) {
                 if (textoUsuario.indexOf("hamburguesa") != -1) {
                     respuesta += estructura.opcion1.texto + "hamburguesas:<br/>";
                     for (int i = 0; i < menuCompleto.size(); i++) {
@@ -120,11 +120,13 @@ public class Bot {
                 } else if (comida.equals("pollo")) {
                     respuesta += estructura.opcion1.opcion1.texto.replace("$1", comida);
                 }
+                respuesta += "<br/>";
                 for (int i = 0; i < menuCompleto.size(); i++) {
                     if ((menuCompleto.get(i).id <= 24 && menuCompleto.get(i).id >= 19)) {
                         respuesta += "• " + menuCompleto.get(i).nombre + " Q" + menuCompleto.get(i).precio + "<br/>";
                     }
                 }
+                totalRespondidas++;
             } else if (numOpcion == 2) {
                 if (textoUsuario.indexOf("pollo") != -1 || textoUsuario.indexOf("hamburguesa") != -1 || textoUsuario.indexOf("pizza") != -1 || textoUsuario.indexOf("papas") != -1) {
                     if (textoUsuario.indexOf("hamburguesa") != -1) {
@@ -173,6 +175,12 @@ public class Bot {
                     respuesta += estructura.opcion2.texto;
                     totalRespondidas = 1;
                     numOpcion = 2;
+                }
+            }
+        } else if (totalRespondidas == 2) {
+            if (numOpcion == 1) {
+                if (textoUsuario.indexOf("te frio") != -1) {
+                    
                 }
             }
         }
