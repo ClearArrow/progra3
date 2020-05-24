@@ -23,8 +23,8 @@ import org.xml.sax.SAXException;
 public class Bot {
 
     public int totalRespondidas;
-    private String archXML = "D:\\Menu.xml";
-    private String archXML2 = "D:\\Estructura.xml";
+    private String archXML = "D:/Menu.xml";
+    private String archXML2 = "D:/Estructura.xml";
     public ArrayList<ItemMenu> menuCompleto = new ArrayList<ItemMenu>();
     public Opcion estructura;
     public int numOpcion;
@@ -52,6 +52,7 @@ public class Bot {
                             respuesta += "• Hamburguesa " + menuCompleto.get(i).nombre + " Q" + menuCompleto.get(i).precio + "<br/>";
                         }
                     }
+                    respuesta += "¿Cuál desea pedir?<br/>";
                     totalRespondidas++;
                     numOpcion = 1;
                     comida = "hamburguesa";
@@ -62,6 +63,7 @@ public class Bot {
                             respuesta += "• Pizza " + menuCompleto.get(i).nombre + " Q" + menuCompleto.get(i).precio + "<br/>";
                         }
                     }
+                    respuesta += "¿Cuál desea pedir?<br/>";
                     totalRespondidas++;
                     numOpcion = 1;
                     comida = "pizza";
@@ -72,6 +74,7 @@ public class Bot {
                             respuesta += "• La " + menuCompleto.get(i).nombre + " Q" + menuCompleto.get(i).precio + "<br/>";
                         }
                     }
+                    respuesta += "¿Cuál desea pedir?<br/>";
                     totalRespondidas++;
                     numOpcion = 1;
                     comida = "papas";
@@ -82,6 +85,7 @@ public class Bot {
                             respuesta += "• " + menuCompleto.get(i).nombre + " Q" + menuCompleto.get(i).precio + "<br/>";
                         }
                     }
+                    respuesta += "¿Cuál desea pedir?<br/>";
                     totalRespondidas++;
                     numOpcion = 1;
                     comida = "pollo";

@@ -40,7 +40,7 @@ public class ChatBot extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private String archXML = "D:\\Chat.xml";
+    private String archXML = "D:/Chat.xml";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -76,7 +76,7 @@ public class ChatBot extends HttpServlet {
                 DOMSource source = new DOMSource(doc);
                 StreamResult result = new StreamResult(new File(archXML));
                 transformer.transform(source, result);
-                agregarMensaje("Bienvenido, ¿qué deseas ordenar?", new Date().getTime() + "", "0");
+                agregarMensaje("Hola MI NOMBRE ES NEO y es un gusto atenderte! <br /> Bienvenido a GuateRapid, ¿qué deseas ordenar?", new Date().getTime() + "", "0");
                 bot = null;
             }
             if (texto != null && fecha != null && autor != null) { // Se ejecuta si hay un nuevo mensaje

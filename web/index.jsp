@@ -15,7 +15,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ordenar comida</title>
+        <title>Ordenar comida rápida</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet" />
         <link href="./css/styles.css" rel="stylesheet" />
@@ -23,11 +23,13 @@
 
     <body>
         <div class="container mt-5">
-            <h3 class="text-center">Pedir comida rápida</h3>
+            <h3 class="text-center">Comunícate con una persona de GuateRapid</h3>
             <div id="chat" class="chat">
-                <div class="mensajeria">
+                <img src="./img/menuguaterapid.png" style="position: absolute; left: 0px;">
+                <div class="mensajeria" style="float: right; position: absolute; right: 0px; max-width: 1000px; margin-right: 15px;">
                     <div class="mensajes">
                         <div class="historial" id="historial">
+                            <img src='https://miro.medium.com/max/1600/1*fZsdZisozTZbM6AaPQKI4Q.gif' style="max-width: 20%;"><h3 style="display: inline;">Bienvenido a servicios en línea GuateRapid</h3>
                             <!--<div class="bot">
                                 <div class="img_bot"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                                 <div class="recibido">
@@ -45,17 +47,20 @@
                                 for (int i = 0; i < chat.mensajes.size(); i++) {
                                     if (chat.mensajes.get(i).autor == 0) {
                                         out.print("<div class='bot'>");
-                                        out.print("<div class='img_bot'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div>");
+                                        out.print("<div class='img_bot'> <img src='https://cdn.dribbble.com/users/2788963/screenshots/6829123/characterheadgif3.gif' alt='sunil' style='width: 65px; height: 50px; max-width: inherit; margin-top: 20px;'> </div>");
                                         out.print("<div class='recibido'>");
+                                        out.print("<span class='fecha'>NEO</span>");
                                         out.print("<div class='men_recibido'>");
                                         out.print("<p>" + chat.mensajes.get(i).mensaje + error + "</p>");
                                         out.print("<span class='fecha'>" + chat.mensajes.get(i).fecha + "</span>");
                                         out.print("</div></div></div>");
                                     } else if (chat.mensajes.get(i).autor == 1) {
                                         out.print("<div class='enviado'>");
+                                        out.print("<div> <img src='https://media.tenor.com/images/1a8c04c853ea57851c56a359d0aeedba/tenor.gif' alt='sunil' style='width: 65px; height: 50px; max-width: inherit; float: right; margin-top:15px;'> </div>");
                                         out.print("<div class='men_enviado'>");
+                                        out.print("<span class='fecha' style='text-align: right;'>TÚ</span>");
                                         out.print("<p>" + chat.mensajes.get(i).mensaje + "</p>");
-                                        out.print("<span class='fecha'>" + chat.mensajes.get(i).fecha + "</span>");
+                                        out.print("<span class='fecha' style='text-align: right;'>" + chat.mensajes.get(i).fecha + "</span>");
                                         out.print("</div></div>");
                                     }
                                 }
